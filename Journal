@@ -1,1 +1,123 @@
 
+Diabetes Data Analysis Project
+Date:
+11 October 2026
+
+Project:
+Diabetes Data Analysis — Medallion Architecture (Fabric Lakehouse + Power BI)
+
+1. What I Planned to Do
+My goal was to complete a full end‑to‑end data engineering and analytics workflow using Microsoft Fabric and Power BI. Specifically, I wanted to:
+
+Upload and manage data in a Fabric Lakehouse
+
+Build Raw → Silver → Gold layers using medallion architecture
+
+Clean and transform the dataset using Python
+
+Connect Power BI Desktop to the Gold layer
+
+Build a clinically meaningful dashboard
+
+Apply conditional formatting and interactive slicers
+
+Produce insights that reflect real healthcare analytics
+
+This project was designed to strengthen my skills in Fabric, Power BI, and modern data engineering patterns.
+
+2. What I Actually Did
+I successfully completed the entire workflow:
+
+Fabric Lakehouse
+Created a Lakehouse and uploaded the raw Pima Indians Diabetes dataset
+
+Built Silver and Gold layers using Python transformations
+
+Stored cleaned and curated data in Parquet format
+
+Power BI Desktop
+Connected directly to the Gold layer using the Lakehouse connector
+
+Built KPI cards for BMI and Glucose
+
+Created BMI Categories and Glucose Bands using DAX
+
+Added slicers for Age, BMI Category, Glucose Band, and Outcome
+
+Designed bar charts, pie charts, and scatter plots
+
+Applied conditional formatting to highlight clinical risk
+
+Added an “About the Data” section and a professional subtitle
+
+Dashboard Enhancements
+Improved layout and readability
+
+Added colour-coded clinical indicators
+
+Ensured the dashboard tells a clear analytical story
+
+3. What Went Well
+I fully understood and applied the medallion architecture
+
+My Fabric Lakehouse transformations worked smoothly
+
+Power BI visuals were clear, meaningful, and clinically relevant
+
+Conditional formatting added strong visual impact
+
+The final dashboard looks professional and portfolio-ready
+
+I gained confidence connecting Fabric → Power BI Desktop
+
+4. What Didn’t Go Well
+I initially struggled with the Direct Lake connector
+
+I repeatedly hit the “Premium workspace required” error
+
+I spent time in Power BI Online instead of Desktop
+
+The wrong connector kept opening, causing confusion
+
+I had to learn the difference between Direct Lake vs Lakehouse connectors
+
+These challenges slowed me down but taught me valuable lessons.
+
+5. What I Learned
+Direct Lake requires Premium — not suitable for my workspace
+
+Power BI Desktop is essential for Lakehouse connections without Premium
+
+How to structure data using medallion architecture
+
+How to create DAX measures for conditional formatting
+
+How to design dashboards that communicate clinical meaning
+
+How to troubleshoot Fabric → Power BI connectivity issues
+
+How to build a complete analytics project from scratch
+
+This project significantly improved my confidence with Fabric and Power BI.
+
+6. What I Will Do Next
+Build a second project: Patient Flow Analytics
+
+Add machine learning (Logistic Regression or Random Forest)
+
+Automate Silver/Gold creation using Fabric pipelines
+
+Publish the dashboard as a Power BI App
+
+Expand my portfolio with more Fabric-based projects
+
+7. Evidence
+Screenshots of dashboard
+
+Python transformation scripts
+
+Fabric Lakehouse folder structure
+
+Power BI report file
+
+GitHub repository containing full project
