@@ -1,1 +1,58 @@
+import pandas as pd
+
+# Load the raw dataset (correct path)
+df = pd.read_csv('/lakehouse/default/Files/Healthcare-Diabetes.csv')
+
+df.head()
+
+# Replace missing values with the median
+df = df.fillna(df.median())
+
+# Replace zeros with the median
+cols = ['Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI']
+for col in cols:
+    df[col] = df[col].replace(0, df[col].median())
+
+df = pd.read_csv('/lakehouse/default/Files/Healthcare-Diabetes.csv')
+
+import os
+
+os.makedirs('/lakehouse/default/Files/silver', exist_ok=True)
+
+df.to_parquet('/lakehouse/default/Files/silver/diabetes_cleaned.parquet')
+df.to_parquet('/lakehouse/default/Files/silver/diabetes_cleaned.parquet')
+
+
+import pandas as pd
+
+gold_df = pd.read_parquet('/lakehouse/default/Files/silver/diabetes_cleaned.parquet')
+gold_df.head()
+
+gold_df = gold_df[['Age', 'BMI', 'Glucose', 'Outcome']]
+gold_df.head()
+gold_df.to_parquet('/lakehouse/default/Files/gold/diabetes_gold.parquet')
+
+import pandas as pd
+
+silver_df = pd.read_parquet('/lakehouse/default/Files/silver/diabetes_cleaned.parquet')
+silver_df.head()
+
+gold_df = silver_df[['Age', 'BMI', 'Glucose', 'Outcome']]
+gold_df.head()
+
+gold_df.to_parquet('/lakehouse/default/Files/gold/diabetes_gold.parquet')
+
+import pandas as pd
+
+# 1. Load the Silver dataset
+silver_df = pd.read_parquet('/lakehouse/default/Files/silver/diabetes_cleaned.parquet')
+
+# 2. Create the tiny Gold table
+gold_df = silver_df[['Age', 'BMI', 'Glucose', 'Outcome']]
+
+# 3. Save the Gold table
+gold_df.to_parquet('/lakehouse/default/Files/gold/diabetes_gold.parquet')
+
+# 4. Show the first few rows (optional)
+gold_df.head()
 
